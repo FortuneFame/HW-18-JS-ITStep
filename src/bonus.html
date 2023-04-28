@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Bonus</title>
+    <style>
+        .news-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .news {
+            padding: 20px;
+            width: 40%;
+            margin-bottom: 40px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .delete-btn {
+            float: right;
+            background-color: #f44336;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button homeBtn" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Бонус</h1>
+    </div>
+    <h1>Список новостей</h1>
+    <div class="news-list">
+        <div class="news">
+            <h3>Lorem ipsum dolor sit amet</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod orci ac magna lacinia, ac tristique
+                leo imperdiet. Ut nec ultrices ipsum. Fusce tincidunt eleifend augue, non sagittis urna varius eget.
+                Pellentesque sit amet hendrerit sapien.</p>
+            <button class="delete-btn" onclick="deleteNews(event)">Удалить</button>
+        </div>
+        <div class="news">
+            <h3>Phasellus tempor sapien eu ex</h3>
+            <p>Phasellus tempor sapien eu ex fringilla, ac rutrum velit aliquet. Proin in sapien eget mauris dapibus
+                sodales. Praesent vel ipsum id nisi euismod congue. Duis sed magna vel turpis feugiat eleifend. Donec
+                eget lacus tristique, vehicula risus vel, ornare sem.</p>
+            <button class="delete-btn" onclick="deleteNews(event)">Удалить</button>
+        </div>
+        <div class="news">
+            <h3>Nunc ullamcorper turpis sit amet</h3>
+            <p>Nunc ullamcorper turpis sit amet magna pharetra posuere. Fusce sed velit at odio maximus euismod quis
+                vitae velit. Sed pharetra vehicula fermentum. Aenean congue varius nisl non viverra. Sed dictum odio id
+                mauris blandit elementum.</p>
+            <button class="delete-btn" onclick="deleteNews(event)">Удалить</button>
+        </div>
+        <div class="news">
+            <h3>Lorem ipsum dolor sit amet</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod orci ac magna lacinia, ac tristique
+                leo imperdiet. Ut nec ultrices ipsum. Fusce tincidunt eleifend augue, non sagittis urna varius eget.
+                Pellentesque sit amet hendrerit sapien.</p>
+            <button class="delete-btn" onclick="deleteNews(event)">Удалить</button>
+        </div>
+        <div class="news">
+            <h3>Phasellus tempor sapien eu ex</h3>
+            <p>Phasellus tempor sapien eu ex fringilla, ac rutrum velit aliquet. Proin in sapien eget mauris dapibus
+                sodales. Praesent vel ipsum id nisi euismod congue. Duis sed magna vel turpis feugiat eleifend. Donec
+                eget lacus tristique, vehicula risus vel, ornare sem.</p>
+            <button class="delete-btn" onclick="deleteNews(event)">Удалить</button>
+        </div>
+        <div class="news">
+            <h3>Nunc ullamcorper turpis sit amet</h3>
+            <p>Nunc ullamcorper turpis sit amet magna pharetra posuere. Fusce sed velit at odio maximus euismod quis
+                vitae velit. Sed pharetra vehicula fermentum. Aenean congue varius nisl non viverra. Sed dictum odio id
+                mauris blandit elementum.</p>
+            <button class="delete-btn" onclick="deleteNews(event)">Удалить</button>
+        </div>
+    </div>
+    <button class="button" onclick="location.reload()">Обновить страницу</button>
+    <script>
+        function deleteNews(event) {
+            event.target.parentElement.remove();
+        }
+    </script>
+</body>
+
+</html>

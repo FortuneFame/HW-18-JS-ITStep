@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #4</title>
+    <style>
+        iframe {
+            border: 1px solid navy;
+            height: 400px;
+            margin: 30px;
+            width: 400px;
+        }
+
+        .iframe {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .btn-history {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button homeBtn" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание №4</h1>
+    </div>
+    <div class="iframe">
+        <div class="div">
+            <iframe src="about:blank" name="frame1"></iframe>
+            <button class="button btn" onclick="navigateFrame(0, 'https://itstep.org')">IT Step</button>
+            <div class="btn-history">
+                <button class="button btn" onclick="navigateFrame(0, 'back')">Назад</button>
+                <button class="button btn" onclick="navigateFrame(0, 'forward')">Вперед</button>
+            </div>
+        </div>
+
+        <div class="div">
+            <iframe src="about:blank" name="frame2"></iframe>
+            <button class="button btn" onclick="navigateFrame(1, 'https://mystat.itstep.org')">Mystat</button>
+            <div class="btn-history">
+                <button class="button btn" onclick="navigateFrame(1, 'back')">Назад</button>
+                <button class="button btn" onclick="navigateFrame(1, 'forward')">Вперед</button>
+            </div>
+        </div>
+
+        <div class="div">
+            <iframe src="about:blank" name="frame3"></iframe>
+            <button class="button btn" onclick="navigateFrame(2, 'https://quiz.itstep.org')">Quizes</button>
+            <div class="btn-history">
+                <button class="button btn" onclick="navigateFrame(2, 'back')">Назад</button>
+                <button class="button btn" onclick="navigateFrame(2, 'forward')">Вперед</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateFrame(frameIndex, url) {
+            const frame = window.frames[frameIndex];
+            const location = frame.location;
+
+            if (url === 'back') {
+                history.back();
+            } else if (url === 'forward') {
+                history.forward();
+            } else {
+                location.assign(url);
+            }
+        }
+    </script>
+</body>
+
+</html>

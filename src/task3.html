@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Task #3</title>
+    <style>
+        #history-length {
+            text-align: center;
+        }
+
+        .address {
+            display: inline-block;
+            color: #212121;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #212121;
+            border-radius: 15px;
+        }
+
+        #history-list {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание №3</h1>
+    </div>
+    <div class="task3">
+        <h1>Количество записей в истории браузера</h1>
+        <button class="button" id="show-history-button">
+            Показать количество записей
+        </button>
+        <p id="history-length"></p>
+        <h2>Проверка работоспособности кнопки</h2>
+        <ul class="list" id="history-list"></ul>
+    </div>
+    <script>
+        const showHistoryLength = () => {
+            const historyLength = window.history.length;
+            const historyLengthElement = document.querySelector("#history-length");
+            historyLengthElement.innerHTML = `Количество записей в истории браузера: <h1>${historyLength}</h1>`;
+        };
+
+        const showHistoryList = () => {
+            const historyList = document.querySelector("#history-list");
+            historyList.style.display = "block";
+        };
+
+        const goBack = (steps) => {
+            window.history.go(steps);
+        };
+
+        const historyList = document.getElementById("history-list");
+        for (let i = 0; i < window.history.length; i++) {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.textContent = `Страница ${i + 1}`;
+            link.classList.add("address");
+            link.href = "#";
+            link.onclick = () => {
+                goBack(i - window.history.length + 1);
+                return false;
+            };
+            listItem.appendChild(link);
+            historyList.appendChild(listItem);
+        }
+
+        const showHistoryButton = document.querySelector("#show-history-button");
+        showHistoryButton.addEventListener("click", () => {
+            showHistoryLength();
+            showHistoryList();
+        });
+    </script>
+</body>
+
+</html>

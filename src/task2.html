@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #2</title>
+</head>
+
+<body>
+    <div class="container">
+        <a class="button task-button" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание №1</h1>
+    </div>
+    <div class="language">
+        <h1>Список языков</h1>
+        <ul id="languageList"></ul>
+    </div>
+    <script>
+        function showLanguages() {
+            const languages = navigator.languages;
+            const primaryLanguage = navigator.language;
+            const languageList = document.querySelector("#languageList");
+            if (languageList.hasChildNodes()) {
+                return;
+            }
+            for (const language of languages) {
+                const languageItem = document.createElement("li");
+                languageItem.textContent = language;
+                if (language === primaryLanguage) {
+                    languageItem.style.fontWeight = "bold";
+                }
+                languageList.appendChild(languageItem);
+            }
+        }
+        window.addEventListener("DOMContentLoaded", showLanguages);
+    </script>
+</body>
+
+</html>

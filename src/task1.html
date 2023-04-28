@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #1</title>
+</head>
+<body>
+    <div class="container">
+        <a class="button task-button" href="../index.html">Домой</a>
+        <h1 class="taskTitle">Задание №1</h1>
+    </div>
+    <div class="window-btn">
+        <button class="button" id="open-window">Открыть новое окно</button>
+        <button class="button" id="close-window">Закрыть окно</button>
+    </div>
+
+    <script>
+
+        let windows = [];
+
+        document.getElementById("open-window").addEventListener("click", () => {
+            let newWindow = window.open("https://itstep.org", "", "width=640,height=480");
+            windows.push(newWindow);
+            newWindow.focus();
+        });
+
+        document.getElementById("close-window").addEventListener("click", () => {
+            if (windows.length > 0) {
+                let windowToClose = windows.shift();
+                if (windowToClose && !windowToClose.closed) {
+                    windowToClose.close();
+                }
+            }
+            if (windows.length === 0) {
+                windows = [];
+            }
+        });
+    </script>
+</body>
+
+</html>
